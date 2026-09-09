@@ -1,0 +1,31 @@
+npm run dev -- --host
+
+# Launch client and server together
+ npm run dev
+
+esktop/corridor-admin/server/src$ node server.js
+cd src
+node server.js
+
+
+
+sudo -u postgres psql -d corridor_pool  
+ TRUNCATE TABLE ride_offers, driver_queue, route_pool RESTART IDENTITY CASCADE;  
+
+
+to add admin
+INSERT INTO admin_users (username, password_hash, full_name, role)
+VALUES ('dispatcher2', 'securepass123', 'Abebe Operations', 'operations_admin');
+
+//to automatically save your backups directly
+pg_dump -U your_username -h localhost -d your_database_name -F c -b -v -f "$HOME/Desktop/corridorDB_Backup/postgres_backup_$(date +%F).dump"
+
+
+
+
+// MEMMORY STUCK ISSUE RESOLVE 
+sudo swapoff -a
+sudo fallocate -l 4G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
